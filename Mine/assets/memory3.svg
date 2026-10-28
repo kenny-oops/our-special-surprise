@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff0f3"/>
+      <stop offset="50%" stop-color="#ffe4e9"/>
+      <stop offset="100%" stop-color="#fdfbf7"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#d6336c" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#bgGrad)" stroke="#f472b6" stroke-width="4" rx="16"/>
+  <g transform="translate(300, 165)" filter="url(#shadow)">
+    <path d="M 0,15 C -25,-15 -50,5 0,45 C 50,5 25,-15 0,15 Z" fill="#e11d48"/>
+  </g>
+  <text x="300" y="235" font-family="Georgia, serif" font-size="22" font-weight="bold" fill="#701a2b" text-anchor="middle">A Dream For Our Future 💫</text>
+  <text x="300" y="265" font-family="Arial, sans-serif" font-size="14" fill="#9b1b30" text-anchor="middle">Replace with memory3.jpg in assets/</text>
+  <rect x="20" y="20" width="560" height="360" fill="none" stroke="#fbcfe8" stroke-width="1.5" stroke-dasharray="6,4" rx="12"/>
+</svg>

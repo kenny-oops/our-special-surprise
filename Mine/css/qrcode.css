@@ -1,0 +1,294 @@
+/* ==========================================================================
+   QR CODE STUDIO & PRINTABLE GIFT CARD STYLES
+   Responsive layout, input verification alerts, and @media print styling
+   ========================================================================== */
+
+.qr-studio-header {
+  padding: 3.5rem 1rem 2rem;
+  text-align: center;
+  background: var(--bg-gradient-hero);
+  border-bottom: 1px solid rgba(251, 207, 232, 0.6);
+}
+
+.qr-studio-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  margin: 3rem auto;
+  align-items: start;
+}
+
+/* Control Panel */
+.qr-card-panel {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 2.25rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(251, 207, 232, 0.7);
+}
+
+.panel-title {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  color: var(--wine-dark);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.panel-description {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 1.75rem;
+  line-height: 1.5;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--wine-dark);
+  margin-bottom: 0.5rem;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.9rem 1.15rem;
+  border-radius: 12px;
+  border: 1.5px solid #f9a8d4;
+  font-size: 0.95rem;
+  font-family: var(--font-body);
+  color: var(--text-dark);
+  outline: none;
+  transition: var(--transition-smooth);
+}
+
+.form-input:focus {
+  border-color: var(--primary-rose);
+  box-shadow: 0 0 0 4px rgba(244, 114, 182, 0.2);
+}
+
+/* Warning & Info Boxes */
+.warning-box {
+  padding: 1rem 1.25rem;
+  border-radius: 10px;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+  display: none;
+}
+
+.warning-alert {
+  background: #fff1f2;
+  border: 1.5px solid #f43f5e;
+  color: #9f1239;
+}
+
+.warning-info {
+  background: #fffbeb;
+  border: 1.5px solid #f59e0b;
+  color: #92400e;
+}
+
+/* QR Code Display Stage */
+.qr-preview-box {
+  background: #fff0f3;
+  border-radius: 16px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed var(--pastel-rose);
+  margin-bottom: 1.5rem;
+  min-height: 280px;
+}
+
+.qr-placeholder-msg {
+  color: var(--ruby-accent);
+  text-align: center;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.qr-code-canvas-container canvas {
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(214, 51, 108, 0.15);
+  background: #ffffff;
+  padding: 10px;
+}
+
+/* Action Button Rows */
+.qr-actions-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* --- PRINTABLE ROMANTIC GIFT CARD TEMPLATE --- */
+.printable-card-preview-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gift-card-box {
+  width: 320px;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 2rem 1.75rem;
+  box-shadow: 0 15px 40px rgba(112, 26, 43, 0.12);
+  border: 2px solid #ffd1dc;
+  position: relative;
+  text-align: center;
+  background-image: radial-gradient(#ffe4e9 0.75px, transparent 0.75px);
+  background-size: 14px 14px;
+}
+
+.card-ribbon {
+  display: inline-block;
+  background: #fdeff4;
+  color: var(--primary-rose);
+  padding: 0.3rem 1rem;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 1px solid #fbcfe8;
+  margin-bottom: 1rem;
+}
+
+.card-title {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  color: var(--ruby-accent);
+  margin-bottom: 0.35rem;
+}
+
+.card-recipient {
+  font-family: var(--font-cursive);
+  font-size: 1.6rem;
+  color: var(--wine-dark);
+  margin-bottom: 1.25rem;
+}
+
+.card-qr-wrapper {
+  background: #ffffff;
+  padding: 12px;
+  border-radius: 14px;
+  display: inline-block;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  border: 1.5px solid #ffe4e9;
+  margin-bottom: 1.25rem;
+}
+
+.card-scan-text {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  color: var(--ruby-accent);
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 0.75rem;
+}
+
+.card-signoff {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  border-top: 1px dashed #fbcfe8;
+  padding-top: 0.75rem;
+}
+
+/* Step-by-Step Deployment Guidance */
+.deployment-steps-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 0;
+}
+
+.deployment-steps-list li {
+  position: relative;
+  padding-left: 2.25rem;
+  margin-bottom: 1.2rem;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+}
+
+.step-num {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 26px;
+  height: 26px;
+  background: var(--primary-rose);
+  color: #fff;
+  border-radius: 50%;
+  font-size: 0.82rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --- PRINT MEDIA QUERY (@media print) --- */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  
+  #heart-canvas,
+  .site-header,
+  .qr-studio-header,
+  .qr-card-panel,
+  .site-footer,
+  .btn-romantic-primary,
+  .btn-romantic-outline,
+  .floating-music-pill,
+  .back-to-top-btn,
+  .no-print {
+    display: none !important;
+  }
+
+  .qr-studio-grid {
+    display: block !important;
+    margin: 0 !important;
+  }
+
+  .printable-card-preview-container {
+    padding: 0 !important;
+    margin: 2cm auto !important;
+  }
+
+  .gift-card-box {
+    width: 90mm !important;
+    border: 2px solid #e11d48 !important;
+    box-shadow: none !important;
+    margin: 0 auto !important;
+    page-break-inside: avoid;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .card-qr-wrapper canvas {
+    max-width: 150px !important;
+    height: auto !important;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 850px) {
+  .qr-studio-grid {
+    grid-template-columns: 1fr;
+  }
+  .gift-card-box {
+    width: 100%;
+    max-width: 340px;
+  }
+}

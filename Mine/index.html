@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Little Forever ❤️</title>
+  <meta name="description" content="A digital love letter and romantic surprise created with all my heart.">
+  <meta name="theme-color" content="#fff2f5">
+
+  <!-- Open Graph for romantic link previews if shared via iMessage/WhatsApp -->
+  <meta property="og:title" content="Our Little Forever ❤️">
+  <meta property="og:description" content="A little corner of the internet made just for you.">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon Heart -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>❤️</text></svg>">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/envelope.css">
+</head>
+<body>
+
+  <!-- Background Canvas for Floating Hearts & Fairy Dust -->
+  <canvas id="heart-canvas" aria-hidden="true"></canvas>
+
+  <!-- Background Music Audio Element -->
+  <!-- Note: Place your own audio file at assets/music.mp3 or leave it to enjoy the built-in music-box chime fallback -->
+  <audio id="bg-music" preload="auto" src="assets/music.mp3"></audio>
+
+  <!-- Floating Sticky Music Pill Widget (Available anywhere on the page) -->
+  <div class="floating-music-pill music-play-toggle" role="button" tabindex="0" aria-label="Toggle background music" aria-pressed="false">
+    <span class="mini-play-icon play-icon">▶</span>
+    <span class="mini-label play-label">Play Music 🎵</span>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" class="back-to-top-btn" aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <div class="site-wrapper">
+
+    <!-- ====================================================================
+         SECTION 1 — PERSONAL WELCOME (HERO)
+         ==================================================================== -->
+    <header class="hero-section" id="hero">
+      <div class="hero-content reveal-on-scroll">
+        <div class="hero-badge-pill">
+          <span>✨</span>
+          <span>A digital love letter made just for you</span>
+          <span>✨</span>
+        </div>
+
+        <!-- Beating 3D Heart -->
+        <div class="hero-heart-container" title="Beating for you ❤️">
+          <div class="beating-heart"></div>
+        </div>
+
+        <h1 class="hero-title">Hey, my favourite person... ❤️</h1>
+        <p class="hero-subtitle">I made a little corner of the internet just for you.</p>
+
+        <div class="hero-cta-group">
+          <a href="#photograph" class="btn-romantic-primary" data-scroll-to="#photograph">
+            <span>Open Your Surprise</span>
+            <span>💌</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <a href="#photograph" class="scroll-indicator" data-scroll-to="#photograph" aria-label="Scroll down to begin">
+        <span>Scroll down</span>
+        <svg width="24" height="24" viewBox="0 0 24 24">
+          <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+        </svg>
+      </a>
+    </header>
+
+
+    <!-- ====================================================================
+         SECTION 2 — HER PHOTOGRAPH
+         ==================================================================== -->
+    <section class="romantic-section photo-section" id="photograph">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-badge">My Inspiration</span>
+          <h2 class="section-title">The Most Beautiful Smile</h2>
+          <p class="section-subtitle">Every time I look at you, I am reminded of how truly blessed I am.</p>
+        </div>
+
+        <div class="photo-stage reveal-on-scroll">
+          <div class="polaroid-card">
+            <!-- Decorative Washi Tape -->
+            <div class="washi-tape"></div>
+
+            <div class="photo-frame">
+              <!--
+                ============================================================
+                HOW TO ADD HER REAL PHOTOGRAPH:
+                1. Save her picture as: girlfriend.jpg
+                2. Place it in the 'assets' folder of this project.
+                3. Refresh the page! If not yet added, the graceful placeholder
+                   is automatically displayed below.
+                ============================================================
+              -->
+              <img
+                src="assets/girlfriend.jpg"
+                alt="To the girl who makes my world more beautiful"
+                class="managed-photo"
+                loading="lazy"
+              >
+
+              <!-- Graceful Romantic Fallback (shown automatically if image is missing) -->
+              <div class="photo-placeholder-fallback">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+                <div class="fallback-title">Her Photograph ❤️</div>
+                <div class="fallback-hint">
+                  Place <strong>girlfriend.jpg</strong> inside the <strong>assets/</strong> folder to display her picture here.
+                </div>
+              </div>
+            </div>
+
+            <div class="polaroid-caption">
+              <h3>To the girl who makes my world more beautiful.</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ====================================================================
+         SECTION 3 — MY LOVE LETTER (Interactive Animated Envelope)
+         ==================================================================== -->
+    <section class="romantic-section letter-section" id="love-letter">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-badge">From My Soul</span>
+          <h2 class="section-title">Words From My Heart 💌</h2>
+          <p class="section-subtitle">A message written just for you, sealed with endless love.</p>
+        </div>
+
+        <div class="envelope-stage reveal-on-scroll">
+          <div id="open-letter-prompt" class="envelope-prompt-text">
+            <span>Tap the wax seal to unfold the letter...</span>
+            <span>✨</span>
+          </div>
+
+          <!-- Interactive 3D Envelope -->
+          <div class="envelope-wrapper" id="interactive-envelope" tabindex="0" role="button" aria-label="Open love letter envelope">
+            <!-- Envelope Back -->
+            <div class="envelope-back"></div>
+
+            <!-- Folded Side & Bottom Pockets -->
+            <div class="envelope-pocket-left"></div>
+            <div class="envelope-pocket-right"></div>
+            <div class="envelope-pocket-front"></div>
+
+            <!-- Top Flap with Wax Seal -->
+            <div class="envelope-flap-top">
+              <div class="wax-seal" title="Break seal to read"></div>
+            </div>
+
+            <!-- The Letter Inside -->
+            <div class="letter-paper">
+              <!-- Teaser inside envelope before clicking -->
+              <div class="letter-preview-teaser">
+                <h4>My love ❤️</h4>
+                <p>Tap to unfold our love story...</p>
+              </div>
+
+              <!-- Full Love Letter (Unfolds upon opening) -->
+              <div class="letter-full-content">
+                <div lang="ta">
+                  <h3 class="letter-salutation">என் செல்லமே ❤️🫂</h3>
+                  <div class="letter-body-text">
+                    <p>என்னிடம் இன்று எல்லாமே இல்லாமல் இருக்கலாம்… ஆனால் உன்னோடு சேர்ந்து எல்லாவற்றையும் உருவாக்க வேண்டும் என்ற ஆசை நிறைய இருக்கிறது. 🥹💍</p>
+
+                    <p>நான் பணக்காரனாக மாறுவதற்கு முன்பே என்னைக் காதலித்த உன் மனதை, நான் வாழ்க்கை முழுவதும் பொக்கிஷமாகப் பாதுகாப்பேன். ❤️</p>
+
+                    <p>உன் கனவுகளுக்கு நான் துணையாகவும், உன் கண்ணீருக்கு ஆறுதலாகவும், உன் வெற்றிக்கு முதல் சந்தோஷமாகவும் இருக்க ஆசைப்படுகிறேன். 🫶🏻</p>
+
+                    <p>நீ என் கையைப் பிடித்திருக்கும் வரை, வாழ்க்கையைப் புரிந்துகொண்டு, உன்னோடு சேர்ந்து வளர என்னால் முடிந்த அனைத்தையும் செய்வேன்.</p>
+
+                    <p><strong>இன்று என் காதலி… நாளை என் மனைவி… வாழ்நாள் முழுவதும் என் தேவதை.</strong> 👰🏻‍♀️💍❤️</p>
+                  </div>
+                  <div class="letter-signoff">
+                    I love you forever, என் உயிரே! 💋❤️♾️
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Action Bar -->
+          <div class="letter-action-bar" style="margin-top: 2rem;">
+            <button class="btn-romantic-outline" id="read-full-letter-btn">
+              <span>Read in Full Screen</span>
+              <span>📖</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mobile-Friendly Full Screen Letter Modal -->
+    <div class="letter-modal-overlay" id="letter-modal" role="dialog" aria-modal="true" aria-label="Full Love Letter">
+      <div class="letter-modal-card">
+        <button class="btn-close-modal" id="close-letter-modal" aria-label="Close letter">&times;</button>
+        <div lang="ta">
+          <h3 class="letter-salutation">என் செல்லமே ❤️🫂</h3>
+          <div class="letter-body-text">
+            <p>என்னிடம் இன்று எல்லாமே இல்லாமல் இருக்கலாம்… ஆனால் உன்னோடு சேர்ந்து எல்லாவற்றையும் உருவாக்க வேண்டும் என்ற ஆசை நிறைய இருக்கிறது. 🥹💍</p>
+
+            <p>நான் பணக்காரனாக மாறுவதற்கு முன்பே என்னைக் காதலித்த உன் மனதை, நான் வாழ்க்கை முழுவதும் பொக்கிஷமாகப் பாதுகாப்பேன். ❤️</p>
+
+            <p>உன் கனவுகளுக்கு நான் துணையாகவும், உன் கண்ணீருக்கு ஆறுதலாகவும், உன் வெற்றிக்கு முதல் சந்தோஷமாகவும் இருக்க ஆசைப்படுகிறேன். 🫶🏻</p>
+
+            <p>நீ என் கையைப் பிடித்திருக்கும் வரை, வாழ்க்கையைப் புரிந்துகொண்டு, உன்னோடு சேர்ந்து வளர என்னால் முடிந்த அனைத்தையும் செய்வேன்.</p>
+
+            <p><strong>இன்று என் காதலி… நாளை என் மனைவி… வாழ்நாள் முழுவதும் என் தேவதை.</strong> 👰🏻‍♀️💍❤️</p>
+          </div>
+          <div class="letter-signoff">
+            I love you forever, என் உயிரே! 💋❤️♾️
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ====================================================================
+         SECTION 4 — OUR MEMORIES
+         ==================================================================== -->
+    <section class="romantic-section memories-section" id="memories">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-badge">Our Journey</span>
+          <h2 class="section-title">Little Moments, Big Memories 📸</h2>
+          <p class="section-subtitle">Every chapter of our story is etched into my heart forever.</p>
+        </div>
+
+        <div class="memory-grid">
+          <!-- Memory Card 1 -->
+          <article class="memory-card reveal-on-scroll">
+            <div class="memory-photo-wrap">
+              <img
+                src="assets/memory1.jpg"
+                alt="Our favourite memory"
+                class="managed-photo"
+                loading="lazy"
+              >
+              <div class="photo-placeholder-fallback">
+                <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                <div class="fallback-title">Memory #1</div>
+                <div class="fallback-hint">Add memory1.jpg to assets</div>
+              </div>
+            </div>
+            <div class="memory-card-body">
+              <span class="memory-tag">Cherished Moment</span>
+              <h3 class="memory-title">Our Favourite Memory</h3>
+              <p class="memory-desc">
+                That unforgettable day when we laughed until our stomachs hurt. We lost track of time talking about everything under the sun, and I knew right then how deeply special you are to me.
+              </p>
+              <div class="memory-footer">
+                <span>A day to remember</span>
+                <span>✨</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Memory Card 2 -->
+          <article class="memory-card reveal-on-scroll">
+            <div class="memory-photo-wrap">
+              <img
+                src="assets/memory2.jpg"
+                alt="The moment you made me smile"
+                class="managed-photo"
+                loading="lazy"
+              >
+              <div class="photo-placeholder-fallback">
+                <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                <div class="fallback-title">Memory #2</div>
+                <div class="fallback-hint">Add memory2.jpg to assets</div>
+              </div>
+            </div>
+            <div class="memory-card-body">
+              <span class="memory-tag">Pure Sunshine</span>
+              <h3 class="memory-title">The Moment You Made Me Smile</h3>
+              <p class="memory-desc">
+                Your silly, spontaneous joy that completely disarmed me. In a world that is often loud and rushed, your presence brings me a peace and happiness I never knew I was missing.
+              </p>
+              <div class="memory-footer">
+                <span>Every single day</span>
+                <span>😊</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Memory Card 3 -->
+          <article class="memory-card reveal-on-scroll">
+            <div class="memory-photo-wrap">
+              <img
+                src="assets/memory3.jpg"
+                alt="A dream I want us to achieve together"
+                class="managed-photo"
+                loading="lazy"
+              >
+              <div class="photo-placeholder-fallback">
+                <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                <div class="fallback-title">Memory #3</div>
+                <div class="fallback-hint">Add memory3.jpg to assets</div>
+              </div>
+            </div>
+            <div class="memory-card-body">
+              <span class="memory-tag">Our Tomorrow</span>
+              <h3 class="memory-title">A Dream I Want Us to Achieve Together</h3>
+              <p class="memory-desc">
+                Traveling hand-in-hand to distant places, watching the stars in quiet corners of the earth, and building a warm, loving home filled with cozy mornings and shared dreams.
+              </p>
+              <div class="memory-footer">
+                <span>To our future</span>
+                <span>💫</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ====================================================================
+         SECTION 5 — A SPECIAL PROMISE
+         ==================================================================== -->
+    <section class="romantic-section promise-section" id="promise">
+      <div class="container">
+        <div class="promise-card reveal-on-scroll">
+          <div class="promise-quote-icon" aria-hidden="true">&ldquo;</div>
+
+          <p class="promise-text">
+            "I cannot promise that every day will be perfect. But I promise to keep learning, growing, supporting your dreams, and doing my best to build a beautiful future with you."
+          </p>
+
+          <div class="promise-hearts-line" aria-hidden="true">
+            <span>🌸</span>
+            <span>❤️</span>
+            <span>✨</span>
+          </div>
+
+          <div class="promise-highlight-msg">
+            You mean the world to me ❤️
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ====================================================================
+         SECTION 6 — FINAL SURPRISE
+         ==================================================================== -->
+    <section class="romantic-section surprise-section" id="final-surprise">
+      <div class="container surprise-container">
+        <div class="surprise-cinema-card reveal-on-scroll">
+          <div class="section-badge">Forever & Always</div>
+
+          <h2 class="surprise-statement">
+            "If I had to choose again, I would still want to meet you, know you, and love you. ❤️"
+          </h2>
+
+          <div class="surprise-action">
+            <button id="final-surprise-btn" class="btn-surprise-reveal">
+              <span>One last thing...</span>
+              <span>💖</span>
+            </button>
+          </div>
+
+          <!-- Secret Revealed Message Box -->
+          <div id="final-reveal-box" class="final-reveal-box" role="region" aria-live="polite">
+            <p class="final-reveal-text">
+              "Thank you for being part of my story. I hope we get to write many more beautiful chapters together. I love you. ❤️"
+            </p>
+            <button id="send-love-btn" class="btn-send-love" aria-label="Send hearts shower">
+              <span>Send Love Back</span>
+              <span>💕</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ====================================================================
+         SECTION 7 — BACKGROUND MUSIC CONTROLS
+         ==================================================================== -->
+    <section class="romantic-section music-section" id="music">
+      <div class="container">
+        <div class="music-player-card reveal-on-scroll">
+          <!-- Vinyl Disc Visualizer -->
+          <div class="vinyl-stage">
+            <div class="vinyl-disc"></div>
+          </div>
+
+          <!-- Details & Controls -->
+          <div class="music-details">
+            <h3 class="music-title">A Soundtrack For Us</h3>
+            <p class="music-artist">Romantic Instrumental Melody</p>
+
+            <div class="music-controls-group">
+              <button class="btn-romantic-primary music-play-toggle" aria-label="Play or pause romantic soundtrack" aria-pressed="false">
+                <span class="play-icon">▶</span>
+                <span class="play-label">Play Music</span>
+              </button>
+
+              <button class="btn-romantic-outline music-mute-toggle" aria-label="Toggle mute" aria-pressed="false">
+                🔊 Mute
+              </button>
+
+              <!-- Soundwave Bars Indicator -->
+              <div class="soundwaves-indicator" aria-hidden="true">
+                <span class="soundwave-bar"></span>
+                <span class="soundwave-bar"></span>
+                <span class="soundwave-bar"></span>
+                <span class="soundwave-bar"></span>
+              </div>
+            </div>
+
+            <div class="music-status-text">
+              Click play to enjoy romantic melody
+            </div>
+          </div>
+        </div>
+
+        <div class="love-music reveal-on-scroll">
+          <p>🎶 Our Special Song ❤️</p>
+
+          <audio controls preload="none">
+            <source src="assets/our-song.mp3.mpeg" type="audio/mpeg">
+            Your browser does not support audio playback.
+          </audio>
+
+          <p>Every song reminds me of you 💗</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ====================================================================
+         FOOTER & QR CODE GIFT CARD STUDIO LINK
+         ==================================================================== -->
+    <footer class="site-footer">
+      <div class="container">
+        <p style="font-family: var(--font-serif); font-size: 1.15rem; margin-bottom: 0.5rem;">
+          Our Little Forever ❤️
+        </p>
+        <p style="color: #fbcfe8; font-size: 0.9rem; margin-bottom: 1.5rem;">
+          Crafted with love, patience, and devotion for the most special girl in the world.
+        </p>
+
+        <!-- QR Code Gift Card Portal Link -->
+        <div class="footer-qr-banner">
+          <p style="margin-bottom: 0.75rem; font-weight: 600; color: #ffffff;">
+            🎁 Want to print a romantic QR gift card for her?
+          </p>
+          <a href="qrcode.html" class="btn-romantic-outline" style="background: rgba(255,255,255,0.95); color: #9b1b30;">
+            Open QR Code & Gift Card Studio 💌
+          </a>
+        </div>
+
+        <p style="font-size: 0.8rem; color: #f472b6; margin-top: 1.5rem;">
+          Forever & Always &bull; Chapter One of Our Journey
+        </p>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/particles.js"></script>
+  <script src="js/music.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

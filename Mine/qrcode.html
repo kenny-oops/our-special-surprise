@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QR Code & Gift Card Studio — Our Little Forever ❤️</title>
+  <meta name="description" content="Generate a real scannable QR code and printable gift card for your girlfriend's romantic surprise website.">
+  <meta name="theme-color" content="#fff2f5">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💌</text></svg>">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/qrcode.css">
+</head>
+<body>
+
+  <!-- Background Canvas for Floating Ambient Sparkles -->
+  <canvas id="heart-canvas" aria-hidden="true"></canvas>
+
+  <div class="site-wrapper">
+
+    <!-- Header -->
+    <header class="qr-studio-header">
+      <div class="container">
+        <div class="hero-badge-pill">
+          <span>🎁</span>
+          <span>Digital Love Letter &bull; QR Gift Card Studio</span>
+          <span>🎁</span>
+        </div>
+        <h1 class="section-title">QR Code & Printable Gift Card</h1>
+        <p class="section-subtitle">
+          Turn your personal website into a physical, scannable romantic gift that she can unlock with her phone.
+        </p>
+        <div style="margin-top: 1.25rem;">
+          <a href="index.html" class="btn-romantic-outline">
+            &larr; Return to "Our Little Forever" Website
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="qr-studio-grid">
+
+        <!-- Column 1: URL Input & Deployment Controls -->
+        <section class="qr-card-panel">
+          <h2 class="panel-title">
+            <span>1. Enter Your Live Website URL</span>
+            <span>🌐</span>
+          </h2>
+          <p class="panel-description">
+            Your QR code must point to your <strong>published online website</strong> so her phone camera can open it from anywhere.
+          </p>
+
+          <!-- Warning Box -->
+          <div id="url-warning" class="warning-box" role="alert"></div>
+
+          <!-- URL Input Field -->
+          <div class="form-group">
+            <label for="qr-url-input" class="form-label">Published Website URL (HTTPS):</label>
+            <input
+              type="url"
+              id="qr-url-input"
+              class="form-input"
+              placeholder="https://yourname.github.io/our-little-forever"
+              autocomplete="off"
+            >
+            <small style="color: var(--text-muted); display: block; margin-top: 0.35rem; font-size: 0.8rem;">
+              Example: <code>https://username.github.io/our-little-forever/</code> or <code>https://our-love.netlify.app</code>
+            </small>
+          </div>
+
+          <!-- Recipient Name Input (Optional Personalization) -->
+          <div class="form-group">
+            <label for="card-recipient-input" class="form-label">Her Name / Pet Name (for the printable card):</label>
+            <input
+              type="text"
+              id="card-recipient-input"
+              class="form-input"
+              placeholder="e.g. My Princess, Sarah, My Love"
+            >
+          </div>
+
+          <!-- Generate Action -->
+          <div style="margin-bottom: 2rem;">
+            <button id="generate-qr-btn" class="btn-romantic-primary" style="width: 100%;">
+              <span>Generate Scannable QR Code</span>
+              <span>✨</span>
+            </button>
+          </div>
+
+          <!-- Deployment Guidance Guide -->
+          <div style="border-top: 1px solid rgba(251, 207, 232, 0.8); padding-top: 1.5rem;">
+            <h3 style="font-family: var(--font-serif); font-size: 1.15rem; color: var(--wine-dark); margin-bottom: 0.75rem;">
+              How to Publish Online for Free in 3 Minutes:
+            </h3>
+
+            <ul class="deployment-steps-list">
+              <li>
+                <span class="step-num">1</span>
+                <strong>Free Option 1: Netlify Drop (Easiest & Fastest)</strong><br>
+                Go to <a href="https://app.netlify.com/drop" target="_blank" rel="noopener">app.netlify.com/drop</a>, drag and drop this entire project folder into the browser window. Within 10 seconds, Netlify gives you a free HTTPS link!
+              </li>
+              <li>
+                <span class="step-num">2</span>
+                <strong>Free Option 2: GitHub Pages</strong><br>
+                Upload the files to a new repository on GitHub named <code>our-little-forever</code>. Go to <em>Settings &rarr; Pages</em> and select the <code>main</code> branch. Your link will be <code>https://yourusername.github.io/our-little-forever/</code>.
+              </li>
+              <li>
+                <span class="step-num">3</span>
+                <strong>Free Option 3: Vercel</strong><br>
+                Import your repository or drag-and-drop the directory via Vercel CLI / Dashboard for an instant HTTPS URL.
+              </li>
+              <li>
+                <span class="step-num">4</span>
+                <strong>Generate & Print!</strong><br>
+                Paste your final HTTPS link above, generate the QR code, and print the gift card below.
+              </li>
+            </ul>
+          </div>
+        </section>
+
+
+        <!-- Column 2: Live QR Code Preview & Printable Gift Card -->
+        <section class="qr-card-panel printable-card-preview-container">
+          <h2 class="panel-title no-print" style="margin-bottom: 1.5rem;">
+            <span>2. Scannable Gift Card Preview</span>
+            <span>💌</span>
+          </h2>
+
+          <!-- The Physical Card Template (Ready to Print) -->
+          <div class="gift-card-box" id="printable-gift-card">
+            <span class="card-ribbon">A Special Surprise</span>
+            
+            <h3 class="card-title">Our Little Forever ❤️</h3>
+            <div class="card-recipient" id="card-recipient-display">For My Favourite Person ❤️</div>
+
+            <div class="card-qr-wrapper">
+              <div id="card-qr-display" class="qr-code-canvas-container">
+                <!-- QR Code rendered here by JavaScript -->
+                <div class="qr-placeholder-msg" style="padding: 1.5rem 0.5rem;">
+                  Enter your published HTTPS URL on the left to see your QR code appear here! ✨
+                </div>
+              </div>
+            </div>
+
+            <p class="card-scan-text">
+              "Scan this to open a little piece of my heart ❤️"
+            </p>
+
+            <div class="card-signoff">
+              Forever yours &bull; Open with your phone camera 📷
+            </div>
+          </div>
+
+          <!-- Standalone High-Res QR Display for Single Download -->
+          <div id="qr-code-display" style="display: none;"></div>
+
+          <!-- Action Buttons for Downloading & Printing -->
+          <div class="qr-actions-row no-print" style="margin-top: 2rem;">
+            <button id="download-qr-btn" class="btn-romantic-primary" disabled>
+              <span>Download QR (PNG)</span>
+              <span>💾</span>
+            </button>
+
+            <button id="print-card-btn" class="btn-romantic-outline">
+              <span>Print Gift Card (PDF)</span>
+              <span>🖨️</span>
+            </button>
+          </div>
+
+          <p class="no-print" style="color: var(--text-muted); font-size: 0.82rem; margin-top: 1rem; text-align: center; max-width: 320px;">
+            💡 <strong>Printing Tip:</strong> Print on high-quality white paper or cardstock, cut along the card edges, and slip it inside a card, flower bouquet, or chocolate box!
+          </p>
+        </section>
+
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer no-print">
+      <div class="container">
+        <p>Our Little Forever ❤️ &bull; Made with devotion for your girlfriend</p>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/qrcode-lib.js"></script>
+  <script src="js/particles.js"></script>
+  <script src="js/qrcode-generator.js"></script>
+</body>
+</html>
